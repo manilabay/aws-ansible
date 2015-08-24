@@ -1,0 +1,7 @@
+---
+
+- include: create_vpc.yml
+  when: create_vpc is defined
+
+- include: destroy_vpc.yml
+  when: destroy_vpc is defined

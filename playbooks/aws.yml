@@ -1,0 +1,9 @@
+- name: Manage AWS
+  hosts: aws
+  connection: local
+  gather_facts: False
+  sudo: True
+  sudo_user: usuariolinux
+
+  roles:
+    - { role: aws, tags: aws }
