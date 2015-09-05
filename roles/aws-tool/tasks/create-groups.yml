@@ -22,6 +22,7 @@
   ec2:
     # key_name: "{{key_name}}"
     region: "{{region}}"
+    vpc_subnet_id: subnet-84adf8e1
     group_id: "{{basic_firewall.group_id}}"
     instance_type: "{{instance_type}}"
     image: "{{ami_id}}"

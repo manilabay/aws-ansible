@@ -6,7 +6,7 @@
   local_action:
       module: ec2
       state: '{{action}}'
-      region: '{{aws_region}}'
+      region: '{{region}}'
       instance_ids: '{{ec2_id}}'
 
 
@@ -15,6 +15,6 @@
       module: ec2_group
       name: "{{sg}}"
       description: "A Security group"
-      region: "{{aws_region}}"
+      region: "{{region}}"
       state: 'absent'
   when: action == "absent"

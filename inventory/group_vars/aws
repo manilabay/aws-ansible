@@ -1,7 +1,7 @@
 ---
 
 region: eu-west-1
-ami_id: ami-cc8de6fc
+ami_id: ami-971a65e0
 instance_type: t1.micro
 key_name: rag
 
