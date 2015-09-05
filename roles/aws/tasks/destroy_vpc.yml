@@ -1,9 +1,0 @@
-- include_vars: prompt.yml
-
-- name: Destroy VPC 
-  ec2_vpc:
-        state: absent
-		cidr_block: 172.23.0.0/16
-        resource_tags: { "Environment":"Development" }
-        #vpc_id: "{{ var_vpc_id }}"
-        region: eu-west-1

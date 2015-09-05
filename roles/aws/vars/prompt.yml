@@ -1,5 +1,0 @@
---- 
-vars_prompt:
-  - name: "var_vpc_id"
-    prompt: "please type vpd id to destroy:"
-    #default: "vpc-xxxxxx"

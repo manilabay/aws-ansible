@@ -1,0 +1,7 @@
+---
+
+- include: manage-groups.yml
+  when: manage_groups is defined
+
+- include: create-groups.yml
+  when: create_groups is defined

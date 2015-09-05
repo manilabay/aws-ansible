@@ -1,0 +1,24 @@
+---
+
+region: eu-west-1
+ami_id: ami-cc8de6fc
+instance_type: t1.micro
+key_name: rag
+
+dev_vpc:
+      re_tags: { "Environment":"Development" }
+      cidr_block: 172.23.0.0/16
+
+      subnets: 
+            web:
+              tier_tags: { "Environment":"Development","Tier":"Web" }
+              cidr: 172.23.1.0/24
+              az: eu-west-1c
+            app:
+              tier_tags: { "Environment":"Development","Tier":"App" }
+              cidr: 172.23.2.0/24
+              az: eu-west-1b
+            db:
+              tier_tags: { "Environment":"Development","Tier":"DB" }
+              cidr: 172.23.3.0/24
+              az: eu-west-1a

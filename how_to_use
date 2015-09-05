@@ -1,0 +1,5 @@
+#playbook aws-vpc.yml. Create and destroy VPC
+
+ansible-playbook -l localhost playbooks/aws.yml --extra-vars="create_vpc=yes" -t vpc
+ansible-playbook -l localhost playbooks/aws.yml --extra-vars="destroy_vpc=yes vpc_id=vpc-26108b43" -t vpc
+

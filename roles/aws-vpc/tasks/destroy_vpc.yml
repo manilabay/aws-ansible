@@ -1,0 +1,14 @@
+- name: Destroy VPC 
+  ec2_vpc:
+# state: absent
+# vpc_id: vpc-a07ae2c5
+# resource_tags: "{{ dev_vpc.re_tags }}"
+# region: "{{ dev_vpc.region }}"
+#connection: local
+        state: absent
+        #vpc_id: "{{ ansible_local.vpc.destroy.vpc_id }}" #passing vpc via ini file on facts.d inside vpc.facts
+        vpc_id: "{{ vpc_id }}"
+        resource_tags: "{{ ansible_local.vpc.destroy.re_tags }}"
+        region: "{{ ansible_local.vpc.destroy.region }}"
+
+

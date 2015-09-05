@@ -1,9 +1,10 @@
 - name: Manage AWS
   hosts: aws
   connection: local
-  gather_facts: False
+  gather_facts: True
   sudo: True
   sudo_user: usuariolinux
 
   roles:
-    - { role: aws, tags: aws }
+    - { role: aws-vpc, tags: vpc }
+    - { role: aws-tool, tags: tool, required_vars: action}

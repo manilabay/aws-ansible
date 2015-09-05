@@ -1,0 +1,22 @@
+---
+
+- name: Create VPC 
+  ec2_vpc:
+        state: present
+        cidr_block: "{{ dev_vpc.cidr_block }}"
+        #cidr_block: 172.23.0.0/16
+        resource_tags: "{{ dev_vpc.re_tags }}"
+        region: "{{ dev_vpc.region }}"
+
+        subnets:
+          - cidr: "{{ dev_vpc.subnets.web.cidr }}"
+            az: "{{ dev_vpc.subnets.web.az }}"
+            resource_tags: "{{ dev_vpc.subnets.web.tier_tags }}"
+
+          - cidr: "{{ dev_vpc.subnets.app.cidr }}"
+            az: "{{ dev_vpc.subnets.app.az }}"
+            resource_tags: "{{ dev_vpc.subnets.app.tier_tags }}"
+
+          - cidr: "{{ dev_vpc.subnets.db.cidr }}"
+            az: "{{ dev_vpc.subnets.db.az }}"
+            resource_tags: "{{ dev_vpc.subnets.db.tier_tags }}"
