@@ -20,7 +20,7 @@
 
 - name: create an EC2 instance
   ec2:
-    key_name: "{{key_name}}"
+    # key_name: "{{key_name}}"
     region: "{{region}}"
     group_id: "{{basic_firewall.group_id}}"
     instance_type: "{{instance_type}}"
