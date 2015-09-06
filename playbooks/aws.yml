@@ -1,5 +1,6 @@
 - name: Manage AWS
-  hosts: aws
+  hosts: all
+  # hosts: aws
   connection: local
   gather_facts: True
   sudo: True
