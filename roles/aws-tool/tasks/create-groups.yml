@@ -2,10 +2,10 @@
 
 - name: Create security group
   ec2_group:
-    name: "{{sg}}"
+    name: "{{ansible_local.operations.create.sg}}"
     description: "A Security group"
-    region: "{{region}}"
-    vpc_id: "{{vpc_id}}"
+    region: "{{ansible_local.operations.general.region}}"
+    vpc_id: "{{ansible_local.operations.create.vpc_id}}"
     rules:
       - proto: tcp
         type: ssh
@@ -17,14 +17,3 @@
         type: all
         cidr_ip: 0.0.0.0/0
   register: basic_firewall
-
-- name: create an EC2 instance
-  ec2:
-    # key_name: "{{key_name}}"
-    region: "{{region}}"
-    vpc_subnet_id: subnet-84adf8e1
-    group_id: "{{basic_firewall.group_id}}"
-    instance_type: "{{instance_type}}"
-    image: "{{ami_id}}"
-    wait: yes
-  register: basic_ec2

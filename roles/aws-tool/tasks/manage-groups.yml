@@ -1,17 +1,7 @@
 ---
-
-- name: "Doing {{action}} to {{ec2_id}} instance in {{region}}"
-  ec2:
-      state: "{{action}}"
-      region: "{{region}}"
-      instance_ids: "{{ec2_id}}"
-      instance_tags:
-        Name: holamundo
-
 - name: Take {{sg}} Security Group down
   ec2_group:
-      name: "security_group_{{sg}}"
+      name: "{{ansible_local.operations.manage.sg}}"
       description: "A Security group"
-      region: "{{region}}"
+      region: "{{ansible_local.operations.general.region}}"
       state: 'absent'
-  when: action == "absent"

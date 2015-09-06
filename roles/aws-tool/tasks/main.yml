@@ -1,7 +1,13 @@
 ---
 
+- include: manage-instances.yml
+  when: ansible_local.operations.manage.manage_instances == "yes"
+
 - include: manage-groups.yml
-  when: manage_groups is defined
+  when: ansible_local.operations.manage.manage_groups == "yes"
 
 - include: create-groups.yml
-  when: create_groups is defined
+  when: ansible_local.operations.create.create_groups == "yes"
+
+- include: create-instances.yml	
+  when: ansible_local.operations.create.create_instances == "yes"

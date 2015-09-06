@@ -3,3 +3,6 @@
 ansible-playbook -l localhost playbooks/aws.yml --extra-vars="create_vpc=yes" -t vpc
 ansible-playbook -l localhost playbooks/aws.yml --extra-vars="destroy_vpc=yes vpc_id=vpc-26108b43" -t vpc
 
+ansible-playbook -i inventory/ec2.py playbooks/aws.yml --extra-vars="manage_groups=yes action=absent region=eu-west-1 sg=holamundo name_tag=* project_tag=holamundo tier_tag=*" -t tool
+ansible-playbook -i inventory/ec2.py playbooks/aws.yml --extra-vars="manage_groups=yes action=stopped region=eu-west-1 sg=holamundo name_tag=* project_tag=holamundo tier_tag=*" -t tool
+ansible-playbook -i inventory/ec2.py playbooks/aws.yml --extra-vars="manage_groups=yes action=running region=eu-west-1 sg=holamundo name_tag=* project_tag=holamundo tier_tag=*" -t tool
