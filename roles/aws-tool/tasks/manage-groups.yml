@@ -1,7 +1,7 @@
 ---
 - name: Take {{sg}} Security Group down
   ec2_group:
-      name: "{{ansible_local.operations.manage.sg}}"
+      name: "{{sg}}"
       description: "A Security group"
-      region: "{{ansible_local.operations.general.region}}"
+      region: "{{region}}"
       state: 'absent'

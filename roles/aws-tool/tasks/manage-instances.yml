@@ -1,0 +1,33 @@
+
+# - debug: msg="{{ manage_instances }}"
+
+- name: "Stopping/Starting to {{group_managed}}"
+  # ec2:
+  
+  # when: "{{groups.ec2_tag_Tier}}"=="Web"
+
+  local_action:
+    module: ec2
+    region: "{{region}}"
+    instance_ids: "{{ec2_id}}"
+    # instance_tags: 
+    #   Tier: Web
+    # state: "{{ansible_local.operations.manage.state}}"
+    state: "{{state}}"
+
+    # with_items: "{{tag_Tier_Web}}"
+      
+      
+      # instance_tags: 
+      #   Name: "{{ansible_local.operations.manage.name_tag}}"
+            # Tier: "{{ansible_local.operations.manage.tier_tag}}"
+            # Tier: Web
+      #   Project: "{{ansible_local.operations.manage.project_tag}}"
+
+      # instance_ids: "{{ec2_id}}"
+      # instace_ids: "{{hostvars[item]['ec2_id']}}"
+      # instance_ids: "{{ec2_id}}"
+      # state: "{{ansible_local.operations.manage.state}}"
+      # with_dict: "{{tags['tag_Tier_Web']}}"
+      # with_items: hostvars[inventory_hostname]['ec2_tag_Tier'] == "{{ansible_local.operations.manage.tier_tag}}"
+      # with_items: hostvars[inventory_hostname]['ansible_ec2_instance_id']

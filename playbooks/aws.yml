@@ -1,5 +1,5 @@
 - name: Manage AWS
-  hosts: all
+  hosts: "{{group_managed}}"
   # hosts: aws
   connection: local
   gather_facts: True

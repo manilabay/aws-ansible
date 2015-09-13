@@ -1,0 +1,13 @@
+- name: create an EC2 instance
+  ec2:
+    # key_name: "{{key_name}}"
+    region: "{{ansible_local.operations.general.region}}"
+    vpc_subnet_id: subnet-84adf8e1
+    group_id: "{{basic_firewall.group_id}}"
+    instance_type: "{{instance_type}}"
+    image: "{{ami_id}}"
+    instance_tags: 
+       Name: "{{ansible_local.operations.create.name_tag}}"
+       Tier: "{{ansible_local.operations.create.tier_tag}}"
+       Project: "{{ansible_local.operations.create.project_tag}}"
+    wait: yes

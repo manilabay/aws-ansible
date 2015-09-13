@@ -1,0 +1,18 @@
+---
+region: eu-west-1
+
+#- manage:
+manage_instances: yes
+group_managed: tag_tier_data
+state: stopped
+manage_groups: no
+#sg: sg_Web
+
+#- create: 
+create_instances: no
+create_groups: no
+# sg: sg_Web
+# vpc_id: vpc-16029973
+
+
+
