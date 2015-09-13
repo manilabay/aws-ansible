@@ -1,7 +1,7 @@
 ---
 
 - include: manage-instances.yml
-  when: manage_instances == "yes"
+  # when: manage_instances == "yes"
 
 - include: manage-groups.yml
   when: manage_groups == "yes"

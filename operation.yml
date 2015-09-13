@@ -3,8 +3,8 @@ region: eu-west-1
 
 #- manage:
 manage_instances: yes
-group_managed: tag_tier_data
-state: stopped
+group_managed: tag_Project_Holamundo
+state: running
 manage_groups: no
 #sg: sg_Web
 
